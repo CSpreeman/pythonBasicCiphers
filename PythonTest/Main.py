@@ -65,15 +65,22 @@ def getTranslatedMessage(mode, cipher, message, key = None):
     else:
            return reverse.reverse.reverse_cipher(message)
 
+while True:
+    mode = getMode()
+    cipher = getType()
+    message = getMessage()
+    if cipher[0] is not 'r':
+        key = getKey()
+    else:
+        key = None
 
-mode = getMode()
-cipher = getType()
-message = getMessage()
-if cipher[0] is not 'r':
-    key = getKey()
-else:
-    key = None
 
+    print('Your translated text is:\n\n')
+    print(getTranslatedMessage(mode, cipher, message, key) + '\n\n')
 
-print('Your translated text is:')
-print(getTranslatedMessage(mode, cipher, message, key))
+    print('Would you like to start over?(y/n)')
+    finish = input().lower()
+    if finish not in 'yes y':
+        break
+    else:
+        pass
