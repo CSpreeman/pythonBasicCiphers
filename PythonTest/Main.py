@@ -26,7 +26,7 @@ def getType():
 
 def getMessage():
     print('Enter your message:')
-    return input()
+    return input().lower()
 
 
 def getKey():
